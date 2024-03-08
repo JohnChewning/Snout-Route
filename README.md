@@ -24,6 +24,21 @@ Snout-Route is a comprehensive community driven travel companion app designed fo
 - dotenv for environment variable management
 - Deployed on Heroku
 
+## Database Setup
+
+To configure the database for Snout-Route, follow these steps:
+
+1. **Install Sequelize and MySQL2**: Run `npm install sequelize mysql2`.
+2. **Initialize Sequelize**: Execute `npx sequelize-cli init` to generate the necessary folders and config files.
+3. **Configure Database Credentials**: Modify `config/config.js` to use environment variables for database credentials.
+4. **Create the Database**: Use MySQL commands or a graphical interface to create your initial database(s).
+5. **Run Migrations**: Execute `npx sequelize-cli db:migrate` to create your database schema.
+6. **Seed the Database** (Optional): Run `npx sequelize-cli db:seed:all` to populate your database with initial data.
+7. **Test the Connection**: Ensure your database connection is correctly configured by running a test script.
+
+This setup ensures your application can interact with a MySQL database for development, testing, and production environments.
+
+
 ## Getting Started
 
 To use Snout-Route, follow these steps:
