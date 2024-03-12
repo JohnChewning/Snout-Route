@@ -1,78 +1,84 @@
+
+:root {
+    --primaryColor: #334455; 
+    --secondaryColor: #667788; 
+    --backgroundColor: #f0f0f0; /* A light background color for contrast */
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #9393f0;
-    background-image: url('/images/Yellow-backdrop.jpeg');
-    background: size 70px;;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: var(--backgroundColor); /* Light background for contrast */
+    /* Removing background image for minimalist design */
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 40px;
+    background-color: var(--primaryColor); /* Use the primary color from the logo */
+    color: var(--secondaryColor); /* Use the secondary color for text */
+    padding: 20px; /* Reduced padding for a more minimalist design */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo-container {
-display: flex;
-align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .logo-img {
-width: 50px; /* Adjust the width to make the logo smaller */
-height: auto; /* Maintain the aspect ratio */
-margin-right: 10px; /* Add some spacing between the image and text */
+    width: 60px; /* Slightly larger for emphasis */
+    height: auto;
+    margin-right: 15px;
 }
 
 #logo-text {
-font-size: 1.5em;
-font-weight: bold;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--secondaryColor); /* Matching the logo's accent color */
 }
 
 #user-actions {
-display: flex;
-gap: 10px;
-color: white;
+    display: flex;
+    gap: 10px;
+    color: var(--secondaryColor); /* Text color from the logo for consistency */
 }
+
 
 #search-container {
     text-align: center;
-    margin: 500px;
-    padding: 50px;
-    border-radius: 10px;
-    color: #fff;
+    margin: 50px auto; /* Centering the search container */
+    padding: 20px;
+    border-radius: 5px; /* Less pronounced border-radius for minimalism */
+    background-color: var(--primaryColor); /* Primary color background */
+    color: var(--secondaryColor); /* Secondary color text */
 }
 
-input[type="text"] {
+input[type="text"], input[type="submit"] {
     padding: 10px;
     width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid var(--secondaryColor); /* Accent color border */
+    border-radius: 5px; /* Keeping the border-radius minimal */
     font-size: 16px;
+    margin: 5px; /* Adding margin for spacing */
 }
 
 input[type="submit"] {
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+    background-color: var(--secondaryColor); /* Secondary color for button */
+    color: var(--primaryColor); /* Primary color text for contrast */
     cursor: pointer;
-    font-size: 16px;
 }
 
-footer{
-    margin: 100px;
-    padding-left: 20px;
-    background-color: #333;
-    color: #fff;
-    padding: 40px;
+
+footer {
+    padding: 20px;
+    background-color: var(--primaryColor); /* Primary color background */
+    color: var(--secondaryColor); /* Secondary color text */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+
+
