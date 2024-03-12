@@ -1,0 +1,78 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #9393f0;
+    background-image: url('/images/Yellow-backdrop.jpeg');
+    background: size 70px;;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+display: flex;
+align-items: center;
+}
+
+.logo-img {
+width: 50px; /* Adjust the width to make the logo smaller */
+height: auto; /* Maintain the aspect ratio */
+margin-right: 10px; /* Add some spacing between the image and text */
+}
+
+#logo-text {
+font-size: 1.5em;
+font-weight: bold;
+}
+
+#user-actions {
+display: flex;
+gap: 10px;
+color: white;
+}
+
+#search-container {
+    text-align: center;
+    margin: 500px;
+    padding: 50px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+footer{
+    margin: 100px;
+    padding-left: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
