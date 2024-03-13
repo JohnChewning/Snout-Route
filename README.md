@@ -8,10 +8,8 @@ Snout-Route is a comprehensive community driven travel companion app designed fo
 - **Review and Rating System**: Share and read reviews of pet-friendly accommodations to make informed decisions.
 - **Pet-Friendly Destinations**: Discover parks, beaches, trails, and dining areas where your pets are warmly welcomed.
 - **Travel Tips and Resources**: Access invaluable advice on pet travel, including airlines, car rentals, and international travel regulations.
-- **Emergency Services**: Quickly find nearby vet clinics and emergency pet services to keep your pets safe while on the road.
 - **User Community**: Connect with fellow pet owners to share experiences, advice, and arrange meetups.
-- **Navigation Integration**: Seamlessly integrate with popular navigation tools to find the best routes and stops for your pet-friendly travels.
-- **Personalized Trip Planning**: Plan your entire trip, including stays, attractions, and dining, in a single, user-friendly interface.
+
 
 ## Technologies Used
 
