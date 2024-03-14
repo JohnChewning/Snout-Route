@@ -15,20 +15,47 @@
             <div id="logo-text">SNOUT ROUTE</div>
         </div>
         <nav id="user-actions">
+        {{#if logged_in}}
+            <button class="no-button" id="logout">Logout</button>
+        {{else}}
             <a href="/signup" onclick="signUp()">Sign Up</a> |
             <a href="/login" onclick="login()">Login</a>
+        {{/if}}
         </nav>
     </header>
 
     <section id="search-container">
-        <p>Unleash Adventure, Where Every Journey is Tail-Waggingly Pawsome!</p>
-        <input type="text" placeholder="Search...">
-        <input type="submit" value="Search" onclick="search()">
+       <div id="search-container-form">
+            <p>Unleash Adventure, Where Every Journey is Tail-Waggingly Pawsome!</p>
+            <input type="text" placeholder="Search...">
+            <input type="submit" value="Search" onclick="search()">
+        </div>
+
+        <div id="search-results">
+            {{!-- this is assuming an array containing search results --}}
+            <h2>Search Results</h2> 
+            {{!-- For each item in searchResults, Handlebars generates a list item (<li>) with the content of the current item accessed through this --}}
+            <ul>
+            {{#each searchResults}}
+                <li>{{this}}</li>
+            {{/each}}
+            </ul>
+        </div>
     </section>
+
+    <main class="main-container">
+        {{!-- Render hompage --}}
+        {{{ body }}}
+    </main>
 
     <footer class="card-footer text-center">
         © 2024 SNOUT ROUTE
     </footer>
+
+     {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
 </body>
 
 </html>
