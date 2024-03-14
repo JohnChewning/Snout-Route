@@ -1,7 +1,9 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-const Location = sequelize.define('Location', {
+class Location extends Model {}
+
+Location.init({
     name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -14,6 +16,9 @@ const Location = sequelize.define('Location', {
         type: DataTypes.TEXT,
         allowNull: false
     }
+}, {
+    sequelize,
+    modelName: 'location' 
 });
 
 module.exports = Location;
