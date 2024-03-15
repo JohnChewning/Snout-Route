@@ -51,20 +51,21 @@ header {
     margin: 50px auto; /* Centering the search container */
     padding: 20px;
     border-radius: 5px; /* Less pronounced border-radius for minimalism */
-    background-color: var(--primaryColor); /* Primary color background */
+    background-color: var(--primaryColor); 
+    /* Primary color background */
     color: var(--backgroundColor); /* Secondary color text */
-    background-image: url('/images/cat_dog.jpg');
+    background-image: url('/cat_dog.jpg');
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the background image */
     width: 100%; /* Adjust the width of the container */
-    height: 800px; /* Adjust height of container*/
+    height: 600px; /* Adjust height of container*/
     max-width: 100%; /* Set a maximum width for the container */
     max-height: 1000px; /* Set a maximum height for the container */
 
 }
 
 #search-container-form {
-    margin-top: 500px;
+    margin-top: 100px;
 }
 
 input[type="text"], input[type="submit"] {
