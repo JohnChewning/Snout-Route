@@ -17,7 +17,7 @@ class User extends Model {
         primaryKey: true,
         autoIncrement: true,
       },
-      name: {
+      username: {
         type: DataTypes.STRING,
         allowNull: false,
       },
