@@ -12,7 +12,7 @@
     <header>
           <div class="logo-container">
             <img class="logo-img" src="https://cdn.discordapp.com/attachments/1008524928242438217/1215459304702877736/file-1fa5XU85J6jtA0ZEzGALY1JW.png?ex=65fcd3b0&is=65ea5eb0&hm=8a97cd07df83fdf45527f794c628b7ba132d6f6ccc2d09876e3892ef05a7afe7&" alt="Snout-Route Logo">
-            <div id="logo-text">SNOUT ROUTE</div>
+            <a href="/" id="logo-text">SNOUT ROUTE</a>
         </div>
         <nav id="user-actions">
         {{#if logged_in}}
@@ -23,6 +23,11 @@
         {{/if}}
         </nav>
     </header>
+
+    <main class="main-container">
+        {{!-- Render hompage --}}
+       {{{ body }}}
+    </main>
 
     <section id="search-container">
        <div id="search-container-form">
@@ -44,11 +49,6 @@
             </ul>
         </div>
     </section>
-
-    <main class="main-container">
-        {{!-- Render hompage --}}
-       {{{ body }}}
-    </main>
 
     <footer class="card-footer text-center">
         © 2024 SNOUT ROUTE

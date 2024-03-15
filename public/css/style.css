@@ -13,6 +13,7 @@ body {
     /* Removing background image for minimalist design */
 }
 
+
 header {
     background-color: var(--primaryColor); /* Use the primary color from the logo */
     color: var(--secondaryColor); /* Use the secondary color for text */
@@ -21,6 +22,16 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(120, 95, 248);
+  }
+  
+  a:hover {
+    color: #808aee;
+  }
 
 .logo-container {
     display: flex;
@@ -48,6 +59,8 @@ header {
 #search-container {
     position: relative;
     text-align: center;
+    text-shadow: 1px 1px 1px #334455;
+    font-weight: bolder;
     margin: 50px auto; /* Centering the search container */
     padding: 20px;
     border-radius: 5px; /* Less pronounced border-radius for minimalism */
