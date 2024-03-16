@@ -35,13 +35,6 @@ app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// Define a route to render the main template
-app.get('/', (req, res) => {
-  res.render('layouts/main', { pageTitle: 'SnouteRoute' });
-});
-
-
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
