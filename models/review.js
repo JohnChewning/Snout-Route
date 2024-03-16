@@ -4,7 +4,11 @@ const sequelize = require('../config/connection');
 class Review extends Model {}
 
 Review.init({
-    content: {
+    title: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    review: {
         type: DataTypes.TEXT,
         allowNull: false
     }
