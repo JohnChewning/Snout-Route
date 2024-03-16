@@ -17,7 +17,7 @@ class User extends Model {
         primaryKey: true,
         autoIncrement: true,
       },
-      name: {
+      username: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -33,7 +33,7 @@ class User extends Model {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [8],
+          len: [1],
         },
       },
     },

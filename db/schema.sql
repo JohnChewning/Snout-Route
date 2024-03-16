@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS user_db;
-CREATE DATABASE user_db;
+DROP DATABASE IF EXISTS snout_route_db;
+CREATE DATABASE snout_route_db;
