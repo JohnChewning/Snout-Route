@@ -1,6 +1,17 @@
 const mapDataBaseUrl = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
 const apiKey = "AIzaSyDxyl56_sTUDJJ1UQoztW668OEGNHjTRHo";
-const address = "3288 N Genesee Rd, Flint, MI 48506"
+const address = "3288 N Genesee Rd, Flint, MI 48506";
+
+const router = require('express').Router();
+
+router.get('/', (req, res) => {
+    getLatLngFromAddress(address)
+        .then(({ latitude, longitude }) => {
+            const result = fetchNearbyPlaces(latitude, longitude);
+            console.log('result:', result)
+            res.status(200).send(JSON.stringify(result, null, 2))
+        });
+})
 
 function fetchNearbyPlaces(latitude, longitude, radius = 5000, type = "park") {
     const searchUrl = `${mapDataBaseUrl}location=${latitude},${longitude}&radius=${radius}&type=${type}&key=${apiKey}`;
@@ -13,6 +24,7 @@ function fetchNearbyPlaces(latitude, longitude, radius = 5000, type = "park") {
         })
         .then(jsonData => {
             console.log(jsonData.results);
+            return jsonData.results;
         })
         .catch(error => {
             console.log('There was a problem with the fetch operation:', error);
@@ -40,10 +52,5 @@ function getLatLngFromAddress(address) {
         });
 }
 
-getLatLngFromAddress(address)
-    .then(({ latitude, longitude }) => {
-        fetchNearbyPlaces(latitude, longitude);
-    });
 
-
-
+module.exports = router;
