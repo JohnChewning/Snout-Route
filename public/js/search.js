@@ -1,10 +1,16 @@
+let locations = [];
+
 async function search() {
+    console.log('hello');
     const searchInput = document.getElementById('search-input').value;
 
     try {
         // Send an AJAX request to fetch search results based on the input
         const response = await fetch(`/api/locations?search=${searchInput}`);
+        console.log('response', response);
         const data = await response.json();
+        console.log('data', data);
+        locations=data;
 
         // Clear previous search results
         document.getElementById('search-results-list').innerHTML = '';

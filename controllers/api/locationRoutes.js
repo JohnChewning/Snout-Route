@@ -1,56 +1,47 @@
-const mapDataBaseUrl = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
-const apiKey = "AIzaSyDxyl56_sTUDJJ1UQoztW668OEGNHjTRHo";
-const address = "3288 N Genesee Rd, Flint, MI 48506";
+const mapDataBaseUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
+const apiKey = "AIzaSyB-XiaRLsDxx2m_nfqQxoq4FNxhv7ggH44";
 
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
-    getLatLngFromAddress(address)
-        .then(({ latitude, longitude }) => {
-            const result = fetchNearbyPlaces(latitude, longitude);
-            console.log('result:', result)
-            res.status(200).send(JSON.stringify(result, null, 2))
-        });
-})
+router.get('/', async (req, res) => {
+    const address = req.query.search;
+    console.log(address);
+    try {
+        const { latitude, longitude } = await getLatLngFromAddress(address);
+        const result = await fetchNearbyPlaces(latitude, longitude);
+        console.log('Result:', result);
+        res.status(200).json(result);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Failed to fetch nearby places' });
+    }
+});
 
-function fetchNearbyPlaces(latitude, longitude, radius = 5000, type = "park") {
+async function fetchNearbyPlaces(latitude, longitude, radius = 5000, type = "park") {
     const searchUrl = `${mapDataBaseUrl}location=${latitude},${longitude}&radius=${radius}&type=${type}&key=${apiKey}`;
-    fetch(searchUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(jsonData => {
-            console.log(jsonData.results);
-            return jsonData.results;
-        })
-        .catch(error => {
-            console.log('There was a problem with the fetch operation:', error);
-        });
+    const response = await fetch(searchUrl);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const jsonData = await response.json();
+    console.log(jsonData.results);
+    return jsonData.results;
 }
 
-function getLatLngFromAddress(address) {
+async function getLatLngFromAddress(address) {
     const geoCodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${apiKey}`;
-
-    return fetch(geoCodeUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(jsonData => {
-            const location = jsonData.results[0].geometry.location;
-            const latitude = location.lat;
-            const longitude = location.lng;
-            return { latitude, longitude };
-        })
-        .catch(error => {
-            console.log('There was a problem with the fetch operation:', error);
-        });
+    const response = await fetch(geoCodeUrl);
+    if (!response.ok) {
+        throw new Error('Failed to fetch geocoding data');
+    }
+    const jsonData = await response.json();
+    if (!jsonData.results || jsonData.results.length === 0) {
+        throw new Error('No results found for the given address');
+    }
+    const location = jsonData.results[0].geometry.location;
+    const latitude = location.lat;
+    const longitude = location.lng;
+    return { latitude, longitude };
 }
-
 
 module.exports = router;
