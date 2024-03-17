@@ -13,6 +13,10 @@ body {
     /* Removing background image for minimalist design */
 }
 
+main {
+    margin: 5px;
+}
+
 
 header {
     background-color: var(--primaryColor); /* Use the primary color from the logo */
@@ -81,20 +85,22 @@ a {
     margin-top: 100px;
 }
 
-input[type="text"], input[type="submit"] {
+#search-bar {
+    display: inline-flex
+}
+
+#search-results {
+    display: none;
+}
+
+input {
     padding: 10px;
     width: 300px;
     border: 2px solid var(--secondaryColor); /* Accent color border */
     border-radius: 5px; /* Keeping the border-radius minimal */
     font-size: 16px;
+    display: flex;
 }
-
-input[type="submit"] {
-    background-color: var(--secondaryColor); /* Secondary color for button */
-    color: var(--primaryColor); /* Primary color text for contrast */
-    cursor: pointer;
-}
-
 
 footer {
     padding: 20px;
