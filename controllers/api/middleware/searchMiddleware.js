@@ -15,6 +15,8 @@ async function search(req, res) {
         const geocodeResponse = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`);
         const geocodeData = await geocodeResponse.json();
 
+        console.log(geocodeData)
+
         // Extract latitude and longitude from geocoding response
         const { lat, lng } = geocodeData.results[0].geometry.location;
 
