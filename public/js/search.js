@@ -1,30 +1,32 @@
-let locations = [];
+document.addEventListener('DOMContentLoaded', () => {
+    const searchForm = document.getElementById('search-bar');
 
-async function search() {
-    console.log('hello');
-    const searchInput = document.getElementById('search-input').value;
+    searchForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
 
-    try {
-        // Send an AJAX request to fetch search results based on the input
-        const response = await fetch(`/api/locations?search=${searchInput}`);
-        console.log('response', response);
-        const data = await response.json();
-        console.log('data', data);
-        locations=data;
+        const searchInput = document.getElementById('search-input').value;
 
-        // Clear previous search results
-        document.getElementById('search-results-list').innerHTML = '';
+        try {
+            // Make an AJAX request to the correct search endpoint handled by the searchMiddleware
+            const response = await fetch(`/api/search?address=${searchInput}`);
+            const data = await response.json();
 
-        // Populate search results
-        data.forEach(location => {
+            // Process the response data and update the UI
+            displaySearchResults(data.results);
+        } catch (error) {
+            console.error('Error fetching search results:', error);
+        }
+    });
+
+    // Function to display search results in the UI
+    function displaySearchResults(results) {
+        const searchResultsList = document.getElementById('search-results-list');
+        searchResultsList.innerHTML = '';
+
+        results.forEach(place => {
             const listItem = document.createElement('li');
-            listItem.textContent = location.name + ', ' + location.address;
-            document.getElementById('search-results-list').appendChild(listItem);
+            listItem.textContent = place.name + ', ' + place.vicinity;
+            searchResultsList.appendChild(listItem);
         });
-    } catch (error) {
-        console.error('Error fetching search results:', error);
     }
-}
-
-// Attach search function to the search button
-document.getElementById('search-button').addEventListener('click', search);
+});
