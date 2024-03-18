@@ -5,13 +5,8 @@ Snout-Route is a comprehensive community driven travel companion app designed fo
 ## Features
 
 - **Accommodation Search**: Easily locate pet-friendly hotels, motels, vacation rentals, and campgrounds tailored to your needs.
-- **Review and Rating System**: Share and read reviews of pet-friendly accommodations to make informed decisions.
-- **Pet-Friendly Destinations**: Discover parks, beaches, trails, and dining areas where your pets are warmly welcomed.
-- **Travel Tips and Resources**: Access invaluable advice on pet travel, including airlines, car rentals, and international travel regulations.
-- **Emergency Services**: Quickly find nearby vet clinics and emergency pet services to keep your pets safe while on the road.
-- **User Community**: Connect with fellow pet owners to share experiences, advice, and arrange meetups.
-- **Navigation Integration**: Seamlessly integrate with popular navigation tools to find the best routes and stops for your pet-friendly travels.
-- **Personalized Trip Planning**: Plan your entire trip, including stays, attractions, and dining, in a single, user-friendly interface.
+- **Pet-Friendly Destinations**: Discover parks, beaches, and trails, where your pets are warmly welcomed.
+- **Personalized Trip Planning**: Plan your entire trip, including attractions and parks, in a single, user-friendly interface.
 
 ## Technologies Used
 
@@ -54,6 +49,13 @@ To use Snout-Route, follow these steps:
 - Devin Everitt
 - Hunter Hurst
 - Garrett Sullivan
+
+## Future Development 
+- **Review and Rating System**: Share and read reviews of pet-friendly accommodations to make informed decisions.
+- **Travel Tips and Resources**: Access invaluable advice on pet travel, including airlines, car rentals, and international travel regulations.
+- **Navigation Integration**: Seamlessly integrate with popular navigation tools to find the best routes and stops for your pet-friendly travels.
+- **User Community**: Connect with fellow pet owners to share experiences, advice, and arrange meetups.
+- **Emergency Services**: Quickly find nearby vet clinics and emergency pet services to keep your pets safe while on the road.
 
 ## Contribution
 
