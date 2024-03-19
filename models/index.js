@@ -1,6 +1,6 @@
-const User = require('./User');
-const Review = require('./Review');
-const Location = require('./Location');
+const User = require('./user');
+const Review = require('./review');
+const Location = require('./location');
 
 User.hasMany(Review, {
     foreignKey: 'user_id'
