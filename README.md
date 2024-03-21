@@ -67,7 +67,7 @@ Initialize the application in the terminal of the server.js file by running the 
 
 Once the application has been initialized in the terminal you may now use Snout Route. To use Snout Route, follow these steps:
 
-1. Visit [Snout-Route](#) to access the app.
+1. Visit [Snout-Route](https://snout-route-60664b49cc33.herokuapp.com/) to access the app.
 2. Create an account or log in.
 3. Start planning your pet-friendly adventure!
 
